@@ -55,9 +55,8 @@ namespace QueryBuilder
                 Poryans.Type2 = "Poison";
 
                 qb.Create(Poryans);
-                Pokemon lookup = qb.Read<Pokemon>(8361);
-                Console.WriteLine($"{lookup.Name}   {lookup.Type1}   {lookup.Type2}   Gen {lookup.Generation}\n" +
-                    $"Attack: {lookup.Attack}   Special Attack: {lookup.SpecialAttack}   Form: {lookup.Form}");
+                Console.WriteLine($"{Poryans.Name}   {Poryans.Type1}   {Poryans.Type2}   Gen {Poryans.Generation}\n" +
+                    $"Attack: {Poryans.Attack}   Special Attack: {Poryans.SpecialAttack}   Form: {Poryans.Form}");
 
                 Console.WriteLine(lineBreak);
 
@@ -96,6 +95,7 @@ namespace QueryBuilder
 
                 qb.DeleteAll<BannedGame>();
                 qb.Create(BanCPY);
+                qb.Create(insert);
             }
             
         }
